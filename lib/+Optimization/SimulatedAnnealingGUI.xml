@@ -1,0 +1,701 @@
+<SimulatedAnnealingGUI>
+	
+	<!-- BoxPanel for acquisition controls -->
+	<SASettingsTabPanel>
+		<Type>uix.TabPanel</Type>
+		
+		<!-- =============================================================== -->
+		<!-- Optimization settings -->
+		<Children>
+			<SASettingsPanel>
+				<Type>uix.Panel</Type>
+				
+				<Children>
+					<SASettingsVBox>
+						<Type>uix.VBox</Type>
+						<Padding eval="true">5</Padding>
+						<Spacing eval="true">5</Spacing>
+						<Heights eval="true">[100 60 40 70 120 110 40 40 50 50]</Heights>
+						
+						<!-- Optimization controls -->
+						<Children>
+							
+							<!-- =========================================== -->
+							<!-- Solution Settings -->
+							<!-- =========================================== -->
+
+							<SASettingsSolutionBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Solution Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsSolutionGrid>
+										<Type>uix.Grid</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<Widths eval="true">[-1 -1 -1]</Widths>
+										
+										<!-- Solution controls -->
+										<Children>
+											
+											<!-- =========================== -->
+											<!-- Column 1 -->
+											<!-- =========================== -->
+									
+											<SASettingsSolutionMaximum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Maximum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsSolutionMaximum>
+											
+											<SASettingsSolutionMinimum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Minimum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsSolutionMinimum>
+											
+											<SASettingsSolutionSaveHighest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Highest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsSolutionSaveHighest>
+											
+											<!-- =========================== -->
+											<!-- Column 2 -->
+											<!-- =========================== -->
+
+											<SASettingsSolutionMaximumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">inf</DefaultValue>
+											</SASettingsSolutionMaximumEdt>
+											
+											<SASettingsSolutionMinimumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">-inf</DefaultValue>
+											</SASettingsSolutionMinimumEdt>
+											
+											
+											<SASettingsSolutionSaveLowest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Lowest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsSolutionSaveLowest>
+											
+											<!-- =========================== -->
+											<!-- Column 3 -->
+											<!-- =========================== -->
+
+											<SASettingsSolutionCoerceValues>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Coerce</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsSolutionCoerceValues>
+											
+											<SASettingsSolutionSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsSolutionSaveHistory>
+											
+											
+											<SASettingsSolutionNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsSolutionNotifyChange>
+											
+										</Children>
+									</SASettingsSolutionGrid>
+									
+								</Children>
+							</SASettingsSolutionBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Optimal solution Settings -->
+							<SASettingsOptimalSolutionBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Optimal Solution Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsOptimalSolutionGrid>
+										<Type>uix.Grid</Type>
+										<Padding eval="true">5</Padding>
+										<Spacing eval="true">5</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<Widths eval="true">[-1 -1]</Widths>
+										
+										<!-- Solution controls -->
+										<Children>
+											
+											<!-- =========================== -->
+											<!-- Column 1 -->
+											<!-- =========================== -->
+									
+											<SASettingsOptimalSolutionSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsOptimalSolutionSaveHistory>
+											
+											<SASettingsOptimalSolutionSaveHighest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Highest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsOptimalSolutionSaveHighest>
+											
+											<!-- =========================== -->
+											<!-- Column 2 -->
+											<!-- =========================== -->
+									
+											<SASettingsOptimalSolutionNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsOptimalSolutionNotifyChange>
+											
+											
+											<SASettingsOptimalSolutionSaveLowest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Lowest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsOptimalSolutionSaveLowest>
+											
+										</Children>
+									</SASettingsOptimalSolutionGrid>
+									
+								</Children>
+							</SASettingsOptimalSolutionBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Cost Settings -->
+							<SASettingsCostBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Cost Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsCostHBox>
+										<Type>uix.HBox</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<!-- <Widths eval="true">[]</Widths> -->
+				
+										<!-- Solution controls -->
+										<Children>
+											
+											<SASettingsCostSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsCostSaveHistory>
+											
+											
+											<SASettingsCostNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsCostNotifyChange>		
+											
+										</Children>
+									</SASettingsCostHBox>
+									
+								</Children>
+							</SASettingsCostBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Iteration Settings -->
+							<SASettingsIterationBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Iteration Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsIterationGrid>
+										<Type>uix.Grid</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<Widths eval="true">[-1 -1 -1]</Widths>
+										
+										<!-- Iteration controls -->
+										<Children>
+											
+											<!-- =========================== -->
+											<!-- Column 1 -->
+											<!-- =========================== -->
+									
+											<SASettingsIterationMaximum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Maximum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsIterationMaximum>
+											
+											<SASettingsIterationMinimum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Minimum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsIterationMinimum>
+											
+											<!-- =========================== -->
+											<!-- Column 2 -->
+											<!-- =========================== -->
+
+											<SASettingsIterationMaximumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">inf</DefaultValue>
+											</SASettingsIterationMaximumEdt>
+											
+											<SASettingsIterationMinimumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">1</DefaultValue>
+											</SASettingsIterationMinimumEdt>
+											
+											<!-- =========================== -->
+											<!-- Column 3 -->
+											<!-- =========================== -->
+									
+											<SASettingsIterationSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsIterationSaveHistory>
+											
+											
+											<SASettingsIterationNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsIterationNotifyChange>
+											
+										</Children>
+									</SASettingsIterationGrid>
+									
+								</Children>
+							</SASettingsIterationBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Temperature Settings -->
+							<SASettingsTemperatureBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Temperature Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsTemperatureGrid>
+										<Type>uix.Grid</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<Widths eval="true">[-1 -1 -1]</Widths>
+										<Heights eval="true">[-1 -1 -1]</Heights>
+										
+										<!-- Temperature controls -->
+										<Children>
+											
+											<!-- =========================== -->
+											<!-- Column 1 -->
+											<!-- =========================== -->
+									
+											<SASettingsTemperatureInitial>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Initial</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsTemperatureInitial>
+										
+											<SASettingsTemperatureMinimum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Minimum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsTemperatureMinimum>
+											
+											<SASettingsTemperatureAnnealRate>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Anneal rate</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsTemperatureAnnealRate>
+											
+											<!-- =========================== -->
+											<!-- Column 2 -->
+											<!-- =========================== -->
+
+											<SASettingsTemperatureInitialEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">.1</DefaultValue>
+											</SASettingsTemperatureInitialEdt>
+											
+											<SASettingsTemperatureMinimumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">0</DefaultValue>
+											</SASettingsTemperatureMinimumEdt>
+											
+											<SASettingsTemperatureAnnealRateEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">.99</DefaultValue>
+											</SASettingsTemperatureAnnealRateEdt>
+
+											<!-- =========================== -->
+											<!-- Column 3 -->
+											<!-- =========================== -->
+									
+											<SASettingsTemperatureSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">true</DefaultValue>
+											</SASettingsTemperatureSaveHistory>
+											
+											
+											<SASettingsTemperatureNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsTemperatureNotifyChange>
+											
+										</Children>
+									</SASettingsTemperatureGrid>
+									
+								</Children>
+							</SASettingsTemperatureBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Step Size Settings -->
+							<SASettingsStepSizeBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Step Size Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									
+									<SASettingsStepSizeGrid>
+										<Type>uix.Grid</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<!-- <Heights eval="true">[]</Heights> -->
+										<Widths eval="true">[-1 -1 -1]</Widths>
+										
+										<!-- Step size controls -->
+										<Children>
+											
+											<!-- =========================== -->
+											<!-- Column 1 -->
+											<!-- =========================== -->
+
+											<SASettingsStepSizeInitial>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Initial</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsStepSizeInitial>
+											
+											<SASettingsStepSizeMaximum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Maximum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsStepSizeMaximum>
+											
+											<SASettingsStepSizeMinimum>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Minimum</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsStepSizeMinimum>
+											
+											<SASettingsStepSizeSaveHighest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Highest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsStepSizeSaveHighest>
+											
+											<!-- =========================== -->
+											<!-- Column 2 -->
+											<!-- =========================== -->
+
+											<SASettingsStepSizeInitialEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">1</DefaultValue>
+											</SASettingsStepSizeInitialEdt>
+											
+											<SASettingsStepSizeMaximumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">inf</DefaultValue>
+											</SASettingsStepSizeMaximumEdt>
+											
+											<SASettingsStepSizeMinimumEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">-inf</DefaultValue>
+											</SASettingsStepSizeMinimumEdt>
+											
+											
+											<SASettingsStepSizeSaveLowest>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Lowest</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsStepSizeSaveLowest>
+											
+											<!-- =========================== -->
+											<!-- Column 3 -->
+											<!-- =========================== -->
+									
+											<SASettingsStepSizeUtilize>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Utilize</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">true</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsStepSizeUtilize>
+											
+											<SASettingsStepSizeCoerceValues>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Coerce</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsStepSizeCoerceValues>
+											
+											<SASettingsStepSizeSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsStepSizeSaveHistory>
+											
+											
+											<SASettingsStepSizeNotifyChange>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Notify</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+												<Enable>Off</Enable>
+											</SASettingsStepSizeNotifyChange>
+											
+										</Children>
+									</SASettingsStepSizeGrid>
+									
+								</Children>
+							</SASettingsStepSizeBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Index Settings -->
+					
+							<SASettingsIndexBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Index Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									<SASettingsIndexHBox>
+										<Type>uix.HBox</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<Children>
+											
+											<SASettingsIndexSaveHistory>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>History</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">false</DefaultValue>
+											</SASettingsIndexSaveHistory>
+											
+										</Children>
+									</SASettingsIndexHBox>
+									
+								</Children>
+							</SASettingsIndexBoxPanel>
+							
+							<!-- ************************************************** -->
+				
+							<!-- Index Settings -->
+					
+							<SASettingsPlottingBoxPanel>
+								<Type>uix.BoxPanel</Type>
+								<Title>Plotting Settings</Title>
+								<FontSize eval="true">7</FontSize>
+								<MinimizeFcn eval="true">@obj.MinimizeFcn</MinimizeFcn>
+								<Minimized eval="true">false</Minimized>
+								
+								<Children>
+									<SASettingsPlottingHBox>
+										<Type>uix.HBox</Type>
+										<Padding eval="true">2</Padding>
+										<Spacing eval="true">1</Spacing>
+										<Widths eval="true">[-1 -1 -1]</Widths>
+										<Children>
+											
+											<SASettingsPlottingOnCBx>
+												<Type>uicontrol</Type>
+												<Style>CheckBox</Style>
+												<String>Update plots</String>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="Value" eval="true">true</DefaultValue>
+											</SASettingsPlottingOnCBx>
+
+											<SASettingsPlottingRateTxt>
+												<Type>uicontrol</Type>
+												<Style>Text</Style>
+												<String>Plot rate</String>
+												<HorizontalAlignment>Right</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+											</SASettingsPlottingRateTxt>
+											
+											<SASettingsPlottingRateEdt>
+												<Type>uicontrol</Type>
+												<Style>Edit</Style>
+												<HorizontalAlignment>Left</HorizontalAlignment>
+												<FontSize eval="true">7</FontSize>
+												<DefaultValue parameter="String" eval="true">1</DefaultValue>
+											</SASettingsPlottingRateEdt>
+										
+										</Children>
+									</SASettingsPlottingHBox>
+									
+								</Children>
+							</SASettingsPlottingBoxPanel>
+							
+							<!-- ************************************************** -->
+					
+							<SASettingsStartTBn>
+								<Type>uicontrol</Type>
+								<Style>ToggleButton</Style>
+								<String>Start</String>
+								<FontSize eval="true">12</FontSize>
+								<FontWeight>Bold</FontWeight>
+								<BackgroundColor>[.5 1 .5]</BackgroundColor>
+							</SASettingsStartTBn>
+							
+							<SASettingsSavePBn>
+								<Type>uicontrol</Type>
+								<Style>PushButton</Style>
+								<String>Save</String>
+								<FontSize eval="true">12</FontSize>
+								<FontWeight>Bold</FontWeight>
+							</SASettingsSavePBn>
+							
+						</Children>				
+					</SASettingsVBox>
+					
+				</Children>
+				
+			</SASettingsPanel>
+		</Children>
+	</SASettingsTabPanel>
+	
+</SimulatedAnnealingGUI>
