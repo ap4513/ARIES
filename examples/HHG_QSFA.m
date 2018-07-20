@@ -6,19 +6,19 @@ C = SI.C*1e3*1e-15;			%	Speed of light [mm/fs]
 
 %	Pulse parameters
 %	----------------------------------------------------------------------------
-l0 = 780;									%	Central wavelength [nm]
+l0 = 800;									%	Central wavelength [nm]
 w0 = chng_rng(l0);							%	Central frequency [rad/fs]
 w0_eV = w0 * 1e15*AU.h_bar/AU.e;			%	Photon energy [eV]
 T = 2*pi/w0;								%	Period [fs]
 T_au = T * (1e-15/AU.time);					%	Period [au]
-DT = 10;									%	Pulse duration, FWHM [fs]
+DT = 50;									%	Pulse duration, FWHM [fs]
 DW = 4*log(2)/DT;							%	Pulse bandwidth, FWHM [rad/fs]
-I0 = 3e14;									%	Peak intensity [W/cm^2]
+I0 = 2e14;									%	Peak intensity [W/cm^2]
 
 %	Spectral/Temporal axes
 %	----------------------------------------------------------------------------
 Nw = 2^16;									%	Frequeny samples
-qmax = 100;									%	Max harmonic order
+qmax = 70;									%	Max harmonic order
 wmax = qmax * w0;							%	Max frequency [rad/fs]
 dw = 2*wmax/(Nw-1);							%	Frequency resolution [rad/fs]
 dt = 2*pi/(Nw*dw);							%	Temporal resolution [fs]
@@ -62,11 +62,11 @@ wCO = Ip_eV + 3.17*Up;						%	Cut-off frequency [eV]
 %	Harmonic spectrum at peak intensity
 %		Note HHG strength is from acceleration of dipole strength, hence
 %		requires multiplication of square of frequency
-Ewq = Time2Freq(QSFA(t_au, e0_au*2*real(Et), Ip_au, T_au)) .* wsq;
+Ewq = Time2Freq(QSFA(t_au, e0_au*2*real(Et), Ip_au, T_au, '@Gaussian')) .* wsq;
 Iwq = abs(Ewq).^2;
 
 semilogy(q, Iwq);
-line(wCO/w0_eV*[1 1], [min(Iwq)+eps max(Iwq)], ...
+line(wCO/w0_eV*[1 1], [1e-40 1], ...
 	'Color', 'k', 'LineStyle', '--', 'LineWidth', 2);
-% xlim([0 qmax]);
+xlim([0 qmax]);
 grid on
