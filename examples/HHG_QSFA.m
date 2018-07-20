@@ -11,9 +11,9 @@ w0 = chng_rng(l0);							%	Central frequency [rad/fs]
 w0_eV = w0 * 1e15*AU.h_bar/AU.e;			%	Photon energy [eV]
 T = 2*pi/w0;								%	Period [fs]
 T_au = T * (1e-15/AU.time);					%	Period [au]
-DT = 100;									%	Pulse duration, FWHM [fs]
+DT = 10;									%	Pulse duration, FWHM [fs]
 DW = 4*log(2)/DT;							%	Pulse bandwidth, FWHM [rad/fs]
-I0 = 4e14;									%	Peak intensity [W/cm^2]
+I0 = 3e14;									%	Peak intensity [W/cm^2]
 
 %	Spectral/Temporal axes
 %	----------------------------------------------------------------------------
@@ -32,7 +32,7 @@ q = w/w0;									%	Harmonic order axis
 k = w/C;									%	Wave vector [rad/mm]
 
 %	Note the higher frequencies are simply the negative frequencies
-wsq = (wmax-abs(w-wmax/2)).^2;		%	Freq axis squared
+wsq = (wmax-abs(w-wmax)).^2;		%	Freq axis squared
 
 %	Fundamental pulse
 %	----------------------------------------------------------------------------
@@ -68,5 +68,5 @@ Iwq = abs(Ewq).^2;
 semilogy(q, Iwq);
 line(wCO/w0_eV*[1 1], [min(Iwq)+eps max(Iwq)], ...
 	'Color', 'k', 'LineStyle', '--', 'LineWidth', 2);
-xlim([0 qmax]);
+% xlim([0 qmax]);
 grid on
